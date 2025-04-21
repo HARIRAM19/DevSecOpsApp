@@ -20,7 +20,6 @@ pipeline {
             }
         }
 
-        stages {
         stage('Check Java') {
             steps {
                 sh 'echo $JAVA_HOME'
