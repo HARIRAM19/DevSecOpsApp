@@ -3,11 +3,10 @@ pipeline {
 
     tools {
         maven 'Maven_3.9.9'
-        jdk 'Java-24'
+        jdk 'JDK_24'
     }
 
     environment {
-        SONARQUBE = 'LocalSonarQube'
         SONAR_TOKEN = credentials('sonar-token')
     }
 
