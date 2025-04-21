@@ -7,8 +7,8 @@ pipeline {
     }
 
     environment {
-        JAVA_HOME = 'C:\Program Files\Java\jdk-24'
-        PATH = "${JAVA_HOME}\bin:${env.PATH}"
+        JAVA_HOME = 'C:/Program Files/Java/jdk-24'
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
         SONARQUBE = 'LocalSonarQube'
         SONAR_TOKEN = credentials('sonar-token')
     }
