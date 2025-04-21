@@ -7,6 +7,8 @@ pipeline {
     }
 
     environment {
+        JAVA_HOME = 'C:/Program Files/Java/jdk-24'
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
         SONARQUBE = 'LocalSonarQube'
         SONAR_TOKEN = credentials('sonar-token')
     }
@@ -21,6 +23,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv("${SONARQUBE}") {
+                    sh 'java -version'
                     sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=DevSecOpsApp -Dsonar.token=sqp_60047f7badcb803bc87bd8c615ac50a605047c76 -Dsonar.host.url=http://10.10.53.100:9000'
                 }
             }
